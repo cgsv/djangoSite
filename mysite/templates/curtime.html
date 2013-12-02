@@ -1,0 +1,12 @@
+{% load staticfiles %}
+<html><body>It is now {{ date }}.
+		<br>
+		<p> hahaha </p>
+		{% include 'inc.html' %}
+		{% for item in items %}
+		{{ item }} is here.<br>
+		{% endfor %}
+
+
+		<img src='{% static "xhh.jpg" %}' />
+</body></html> 

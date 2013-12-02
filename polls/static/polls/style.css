@@ -1,0 +1,10 @@
+li a {
+	color: green;
+}
+
+body {
+	text-align: center;
+	font-family: arial;
+	margin: 100;
+	background: white url("images/a.jpg") no-repeat right bottom;
+}

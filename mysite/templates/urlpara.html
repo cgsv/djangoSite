@@ -1,0 +1,25 @@
+<html>
+	<title>Url Parameter Test</title>
+	<script>
+		window.onload = function(){
+		
+	ch = document.getElementById("ch")
+		ch.src = "/getparams?params=" + encodeURIComponent(location.href)
+		ch1 = document.getElementById("ch1")
+		ch1.href = "/getparams?params=" + encodeURIComponent(location.href)
+
+//	xmlhttp = new XMLHttpRequest();
+//	url =  "/getparams?params=" + encodeURIComponent(location.href);
+//	xmlhttp.open("GET", url, false);
+//	xmlhttp.send(null);
+//	ch.innerHTML = xmlhttp.responseText;
+	}
+	</script>
+
+	<body>
+		This is a parameter test.
+		<a id="ch1" href="#"> What is this?</a> 
+
+		<img id="ch" src="" />
+		<!--	<div id="ch"> </div> -->
+	</body>

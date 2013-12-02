@@ -1,0 +1,20 @@
+<html>
+	<head><title>Search Result</title></head>
+	<body>
+		<br>
+		The query string is {{ query }}
+		<br>
+		<br>
+		Here is the result:
+		<b>
+		<br>
+		{% if books %}
+		{% for book in books %}
+		{{ book.title }} <br> 
+		{% endfor %}
+		{% else %}
+		No books Match.
+		{% endif %}
+	</b>
+	</body>
+</html>

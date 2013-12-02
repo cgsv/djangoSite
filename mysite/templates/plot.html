@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<html><title>plot</title>
+	<script>
+		funs = ["sin(x)","exp(x)","x**2","sin(x)+sin(3*x)"];
+		function fillform(){
+			fun = funs[parseInt(4*Math.random())]
+			document.getElementsByName('function')[0].value = fun;
+			document.getElementsByName('min')[0].value = "-10";
+			document.getElementsByName('max')[0].value = "10";
+		}
+	</script>
+	
+	<body>
+		<form action="" method="POST">
+			Function: <input type="text" name="function"/><br>
+			minValue: <input type="text" name="min"/><br>
+			maxValue: <input type="text" name="max"/><br>
+			{% csrf_token %}
+			<input type="submit" value="PLOT"/>
+		</form>
+			<button onclick="fillform()"> Example </button>
+			<br>
+		{% if error %}
+			<p> {{ error }} </p><br>
+		{% else %}
+		<p><strong> {{ fun }} </strong> for x in [{{ min }}, {{ max }}] </p>
+			<img src='{% static "foo.png" %}' />
+		{% endif %}
+		<br>
+		<img src="data:image/jpg;base64,{{ picdata }}" />
+</body></html> 
+
